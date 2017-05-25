@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_message_files(FILES DRC_HEAD_CMD.msg)
 generate_messages(DEPENDENCIES std_msgs)
+set(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
 
 
 # Depend on system install of Gazebo
