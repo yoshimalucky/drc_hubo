@@ -21,8 +21,8 @@
 #include <tf/transform_listener.h>
 
 
-#define PODO_ADDR       "10.12.3.30"
-//#define PODO_ADDR       "127.0.0.1"
+// #define PODO_ADDR       "10.12.3.30"
+#define PODO_ADDR       "127.0.0.1"
 #define PODO_PORT       5000
 
 const float     D2Rf = 0.0174533;
@@ -175,7 +175,7 @@ int main(int argc, char **argv)
 
     // Create Socket ---------------------
     FILE *fpNet = NULL;
-    fpNet = fopen("/home/hubo/catkin_ws/src/drc_hubo/ros/settings/network.txt", "r");
+    fpNet = fopen("/home/y-tanaka/ros/indigo/src/drc_hubo/ros/settings/network.txt", "r");
     if(fpNet == NULL){
         std::cout << ">>> Network File Open Error..!!" << std::endl;
         sprintf(ip, PODO_ADDR);
