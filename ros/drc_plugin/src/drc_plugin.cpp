@@ -250,7 +250,7 @@ void DRCPlugin::OnUpdate(const common::UpdateInfo &){
                     std::cout << "original 1: " << model->GetInitialRelativePose().pos.z << std::endl;
                     std::cout << "new one  1: " << z << std::endl;
                 }
-                model->SetWorldPose(math::Pose(0,0,z, 0,0,0));
+                model->SetWorldPose(math::Pose(0,0,z+0.25, 0,0,0));
             }else{
                 // Wheel mode
                 float z;
@@ -266,9 +266,9 @@ void DRCPlugin::OnUpdate(const common::UpdateInfo &){
                 }
                 setGainOverride(RKN, 100, 100);
                 setGainOverride(LKN, 100, 100);
-                model->SetWorldPose(math::Pose(0,0,z, 0,0,0));
+                model->SetWorldPose(math::Pose(0,0,z+0.25, 0,0,0));
             }
-            model->GetWorld()->GetPhysicsEngine()->SetGravity(math::Vector3(0,0,-2.9));
+            model->GetWorld()->GetPhysicsEngine()->SetGravity(math::Vector3(0,0,-0.2)); // -2.9
             model->SetGravityMode(true);
         }else if(FirstRcvCnt == 6500){
             model->GetWorld()->GetPhysicsEngine()->SetGravity(math::Vector3(0,0,-9.8));
